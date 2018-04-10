@@ -1,0 +1,152 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+#network-chart {
+  height: calc(100% - 40px);
+}
+#network-chart-content {
+  height: 100%;
+}
+#network-chart-legend {
+  height: 40px;
+}
+
+.orgchart {
+  background: transparent;
+}
+
+.orgchart .node {
+  width: 150px;
+}
+
+.orgchart .node .content {
+  height: auto;
+  min-height: 50px;
+  white-space: normal;
+  border-radius: 0;
+  font-size: 14px;
+  border-color: #d0d2d4;
+}
+
+.orgchart .node .content > div {
+  padding: 5px;
+  vertical-align: middle;
+}
+
+.orgchart .lines .topLine {
+  border-color: #84b4e0;
+}
+
+.orgchart .lines .rightLine {
+  border-color: #84b4e0;
+}
+
+.orgchart .lines .leftLine {
+  border-color: #84b4e0;
+}
+
+.orgchart .lines .downLine {
+  background-color: #84b4e0;
+}
+
+.orgchart .verticalNodes > td::before {
+  border-color: #84b4e0;
+}
+
+.orgchart .verticalNodes ul > li::before,
+.orgchart .verticalNodes ul > li::after {
+  border-color: #84b4e0;
+}
+
+.orgchart .edge,
+.orgchart .toggleBtn {
+  display: none;
+}
+
+.orgchart .node.root {
+  /*width: 100px;*/
+  width: auto;
+  border-radius: 50%;
+  max-width: 150px;
+}
+
+.orgchart .node.root:hover {
+  background-color: rgba(238, 217, 54, 0.5);
+}
+
+.orgchart .node.root.focused {
+  background-color: rgba(238, 217, 54, 0.5);
+}
+
+.orgchart .node.root .content {
+  border-radius: 50%;
+  /*height: 90px;
+            width: 90px;
+            line-height: 80px;*/
+  padding: 15px;
+}
+
+.orgchart .node.library .content {
+  background-color: #deebf6;
+}
+.orgchart .node.partner .content {
+  background-color: #f2d5c1;
+}
+
+.orgchart .node .portal {
+  /* http://bit.ly/2F6iF66 */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAMUlEQVQYV2NkwAG+n9/8nxGbHEiC09CXEUMSJgHShCKJLIEiiS4Bl8QmAZbEJQGSBAC0CxuAbB2wJQAAAABJRU5ErkJggg==);
+  background-color: #fff;
+}
+
+.orgchart .node.group .portal,
+.orgchart .node.library .portal,
+.orgchart .node.partner .portal {
+  border-left: solid 1px #d0d2d4;
+}
+
+.network-legend {
+  display: table;
+  width: 100%;
+  margin: 10px;
+  font-size: 14px;
+}
+
+.network-legend > li {
+  display: table-cell;
+  width: 25%;
+}
+
+.network-legend > li span:first-child {
+  border: solid 1px #d0d2d4;
+  width: 50px;
+  height: 20px;
+  display: inline-block;
+}
+
+.network-legend > li span {
+  vertical-align: middle;
+}
+
+.network-legend > li .library {
+  background-color: #deebf6;
+}
+
+.network-legend > li .partner {
+  background-color: #f2d5c1;
+}
+
+.network-legend > li .portal {
+  /* http://bit.ly/2F6iF66 */
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAADEUlfTAAAAMUlEQVQYV2NkwAG+n9/8nxGbHEiC09CXEUMSJgHShCKJLIEiiS4Bl8QmAZbEJQGSBAC0CxuAbB2wJQAAAABJRU5ErkJggg==);
+}
