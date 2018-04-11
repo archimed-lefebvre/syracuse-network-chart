@@ -1,9 +1,9 @@
 module.exports = {
   mode: "development",
-  entry: ["./app/index.js"],
+  entry: ["./src/app.js"],
   output: {
-    path: __dirname + "/build",
-    filename: "bundle.js"
+    path: __dirname + "/dist",
+    filename: "app.js"
   },
   module: {
     rules: [
@@ -13,12 +13,16 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
   devServer: {
     port: 8000,
-    contentBase: "./build",
+    contentBase: "./dist",
     inline: true
   }
 };

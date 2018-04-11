@@ -1,8 +1,10 @@
-import axios from "axios";
+// import axios from "axios";
 
-const scopes = axios.create({
-  baseURL: "http://localhost:3000/scopes"
-});
+// const scopes = axios.create({
+//   baseURL: "http://localhost:3000/scopes"
+// });
+
+import style from "./app.css";
 
 function errorHandler(err) {
   console.error(err.data);
@@ -31,18 +33,18 @@ function nodeTempate(data) {
   return tpl;
 }
 
-scopes
-  .get("/")
-  .then(res => {
+fetch("db.json")
+  .then(r => r.json())
+  .then(json => {
     var chartOptions = {
       pan: true,
       zoom: true,
       nodeTemplate: nodeTempate,
       verticalLevel: 0,
       data: {
-        Description: "Direction Départementale du Livre et du Multimédia!",
+        Description: "Direction Départementale du Livre et du Multimédia",
         className: "root",
-        children: res.data
+        children: json.scopes
       },
       nodeId: "Name",
       nodeContent: "Description",
